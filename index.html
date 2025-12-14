@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hayatu & Rukayya's Wedding</title> 
+
     <style>
-        /* CSS: Styling */
         @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;600&display=swap');
 
         body {
@@ -30,10 +30,24 @@
             border: 1px solid #eee;
         }
 
-        /* Wedding Names Style */
+        /* Header */
+        .header {
+            margin-bottom: 30px;
+        }
+
+        .header h2 {
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            color: #777;
+            margin-bottom: 10px;
+        }
+
+        /* Wedding Names */
         h1 {
-            font-family: 'Great Vibes', cursive; /* Elegant script font */
-            color: #d63384; /* Wedding Pink */
+            font-family: 'Great Vibes', cursive;
+            color: #d63384;
             margin: 0;
             font-size: 3.5rem;
             line-height: 1.2;
@@ -44,23 +58,21 @@
             color: #888;
             display: block;
             margin: 10px 0;
-            font-family: 'Poppins', sans-serif;
         }
 
         p.details {
             font-size: 1.1rem;
             color: #555;
-            margin-top: 20px;
+            margin-top: 25px;
             margin-bottom: 40px;
             text-transform: uppercase;
             letter-spacing: 2px;
             border-top: 1px solid #ddd;
             border-bottom: 1px solid #ddd;
             padding: 15px 0;
-            display: inline-block;
-            width: 100%;
         }
 
+        /* Countdown */
         .countdown {
             display: flex;
             justify-content: center;
@@ -69,13 +81,10 @@
         }
 
         .time-box {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             background: #f9f9f9;
             padding: 15px;
             border-radius: 10px;
-            min-width: 80px;
+            min-width: 90px;
         }
 
         .number {
@@ -91,70 +100,94 @@
             margin-top: 5px;
         }
 
-        /* Mobile Responsive Design */
+        /* Footer */
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 0.9rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        /* Mobile Responsive */
         @media (max-width: 600px) {
             h1 { font-size: 2.5rem; }
             .countdown { gap: 10px; }
-            .time-box { min-width: 60px; padding: 10px; }
-            .number { font-size: 1.5rem; }
-            .label { font-size: 0.6rem; }
+            .time-box { min-width: 65px; padding: 10px; }
+            .number { font-size: 1.6rem; }
+            .label { font-size: 0.65rem; }
         }
     </style>
 </head>
+
 <body>
 
-    <div class="container">
-        <h1>Hayatu Aliyu Albaba</h1>
-        <span class="ampersand">&</span>
-        <h1>Rukayya Almustapha</h1>        
-        <p class="details">April 25, 2026 &bull; 2:30 AM</p>
-        
-        <div class="countdown" id="countdown">
-            <div class="time-box">
-                <span class="number" id="days">000</span>
-                <span class="label">Days</span>
-            </div>
-            <div class="time-box">
-                <span class="number" id="hours">00</span>
-                <span class="label">Hours</span>
-            </div>
-            <div class="time-box">
-                <span class="number" id="minutes">00</span>
-                <span class="label">Minutes</span>
-            </div>
-            <div class="time-box">
-                <span class="number" id="seconds">00</span>
-                <span class="label">Seconds</span>
-            </div>
+<div class="container">
+
+    <!-- Header -->
+    <div class="header">
+        <h2>Countdown to the Wedding of</h2>
+    </div>
+
+    <!-- Names -->
+    <h1>Hayatu Aliyu Albaba</h1>
+    <span class="ampersand">&</span>
+    <h1>Rukayya Almustapha</h1>        
+
+    <p class="details">April 25, 2026 &bull; 2:30 PM</p>
+
+    <!-- Countdown Timer -->
+    <div class="countdown" id="countdown">
+        <div class="time-box">
+            <span class="number" id="days">000</span>
+            <span class="label">Days</span>
+        </div>
+        <div class="time-box">
+            <span class="number" id="hours">00</span>
+            <span class="label">Hours</span>
+        </div>
+        <div class="time-box">
+            <span class="number" id="minutes">00</span>
+            <span class="label">Minutes</span>
+        </div>
+        <div class="time-box">
+            <span class="number" id="seconds">00</span>
+            <span class="label">Seconds</span>
         </div>
     </div>
 
-    <script>
-        // Set the wedding date: April 25, 2026, at 2:30 PM
-        const countDownDate = new Date("April 25, 2026 2:30:00").getTime();
+    <!-- Footer -->
+    <footer>
+        Please include us in your prayers
+    </footer>
 
-        const x = setInterval(function() {
-            const now = new Date().getTime();
-            const distance = countDownDate - now;
+</div>
 
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+<script>
+    // Wedding date: April 25, 2026, at 2:30 PM
+    const countDownDate = new Date("April 25, 2026 14:30:00").getTime();
 
-            document.getElementById("days").innerText = days;
-            document.getElementById("hours").innerText = hours < 10 ? '0' + hours : hours;
-            document.getElementById("minutes").innerText = minutes < 10 ? '0' + minutes : minutes;
-            document.getElementById("seconds").innerText = seconds < 10 ? '0' + seconds : seconds;
+    const x = setInterval(function () {
+        const now = new Date().getTime();
+        const distance = countDownDate - now;
 
-            if (distance < 0) {
-                clearInterval(x);
-                document.getElementById("countdown").innerHTML = "<h2>It's Our Wedding Day!</h2>";
-            }
-        }, 1000);
-    </script>
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerText = days;
+        document.getElementById("hours").innerText = hours < 10 ? '0' + hours : hours;
+        document.getElementById("minutes").innerText = minutes < 10 ? '0' + minutes : minutes;
+        document.getElementById("seconds").innerText = seconds < 10 ? '0' + seconds : seconds;
+
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("countdown").innerHTML = "<h2>Today is Our Wedding Day!</h2>";
+        }
+    }, 1000);
+</script>
 
 </body>
-
 </html>
-
